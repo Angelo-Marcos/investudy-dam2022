@@ -6,7 +6,7 @@ export default {
         shape: '#000000',
         title: '#0CA012',
 
-        background: '#698EB8',
+        background: '#E5E5E5',
         cardView: '#FFFFFF',
 
         income: '#3F51B5',
