@@ -11,5 +11,8 @@ export default {
 
         income: '#3F51B5',
         expense: '#CA0606',
+    },
+    fonts: {
+        regular: 'Poppins_400Regular'
     }
 }
