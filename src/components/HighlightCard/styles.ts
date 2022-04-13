@@ -1,7 +1,10 @@
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native';
-import { Entypo } from '@expo/vector-icons';
+import styled, { css } from 'styled-components/native';
+import { Entypo, Ionicons } from '@expo/vector-icons';
 
+interface TypeProps {
+    type: 'inCount' | 'income' | 'expense';
+}
 
 export const Container = styled.View`
     background-color: ${(props) => props.theme.colors.cardView};
@@ -9,11 +12,13 @@ export const Container = styled.View`
     height: ${RFValue(92)}px;
     border-radius: 10px;
 
+    flex: 0;
+
     padding: 0 1px;
     padding-bottom: ${RFValue(27)}px;
 
     margin-right: 14px;
-    margin-top: 70px;
+    margin-top: 19px;
 `;
 
 export const Header = styled.View`
@@ -28,9 +33,17 @@ export const Title = styled.Text`
     color: ${(props) => props.theme.colors.title};
 `;
 
-export const Icon = styled(Entypo)`
+export const Icon = styled(Entypo) <TypeProps>`
     font-size: ${RFValue(20)}px;
     color: ${(props) => props.theme.colors.title};
+`;
+
+export const IconArrows = styled(Ionicons) <TypeProps>`
+    
+    font-size: ${RFValue(18)}px;
+    margin-right: 5px;
+    color: ${({ theme, type }) => type === 'income' ? theme.colors.income : theme.colors.expense};
+
 `;
 
 export const Footer = styled.View`

@@ -13,6 +13,6 @@ export default {
         expense: '#CA0606',
     },
     fonts: {
-        regular: 'Poppins_400Regular'
+        regular: 'PaytoneOne_400Regular'
     }
 }

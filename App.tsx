@@ -8,12 +8,12 @@ import { Home } from './src/screens/Home';
 
 import {
   useFonts,
-  Poppins_400Regular
-} from '@expo-google-fonts/poppins'
+  PaytoneOne_400Regular
+} from '@expo-google-fonts/paytone-one'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    Poppins_400Regular
+    PaytoneOne_400Regular
   });
 
   if (!fontsLoaded) {

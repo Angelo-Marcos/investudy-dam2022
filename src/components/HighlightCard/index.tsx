@@ -1,19 +1,41 @@
 import React from 'react';
 
+
 import {
     Amount,
-    Container, Footer, Header, Icon, Title
+    Container, Footer, Header, Icon, IconArrows, Title
 } from './styles';
 
-export function HighlightCard() {
+interface Props {
+    title: string;
+    amount: string;
+    type: 'inCount' | 'income' | 'expense';
+}
+
+export function HighlightCard({
+    title,
+    amount,
+    type
+}: Props) {
+    const icons = {
+        inCount: 'wallet',
+        income: 'arrow-up-circle',
+        expense: 'arrow-down-circle'
+    }
+
     return (
         <Container>
             <Header>
-                <Icon name="wallet" />
-                <Title>EM CONTA</Title>
+                {
+                    type === 'inCount' ?
+                        <Icon name={icons[type]} type={type} /> :
+                        <IconArrows name={icons[type]} type={type} />
+                }
+
+                <Title>{title}</Title>
             </Header>
             <Footer>
-                <Amount>R$ 630,25</Amount>
+                <Amount>{amount}</Amount>
             </Footer>
         </Container>
     )
