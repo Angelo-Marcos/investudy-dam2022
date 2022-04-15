@@ -10,17 +10,40 @@ import {
     Date
 } from './styles'
 
-export function TransactionCard() {
+interface Category {
+    name: string;
+    icon: string;
+}
+
+export interface TransactionCardProps {
+    type: 'income' | 'expense';
+    title: string;
+    amount: string;
+    category: Category;
+    date: string;
+}
+
+interface Props {
+    data: TransactionCardProps;
+}
+
+export function TransactionCard({ data }: Props) {
     return (
         <Container>
-            <Icon name='arrow-up-circle' />
+            <Icon
+                type={data.type}
+                name={data.category.icon}
+            />
             <Header>
-                <Title>ASSISTÊNCIA ESTUDANTIL</Title>
-                <Category>AUXÍLIO</Category>
+                <Title>{data.title}</Title>
+                <Category>{data.category.name}</Category>
             </Header>
             <Footer>
-                <Amount>R$ 420,00</Amount>
-                <Date>10/02/2022</Date>
+                <Amount type={data.type}>
+                    {data.type === 'expense' && '- '}
+                    {data.amount}
+                </Amount>
+                <Date>{data.date}</Date>
             </Footer>
 
         </Container>

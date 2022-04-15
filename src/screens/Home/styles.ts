@@ -2,6 +2,8 @@ import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import styled from 'styled-components/native';
 import { SimpleLineIcons, Ionicons } from '@expo/vector-icons';
+import { FlatList, FlatListProps } from 'react-native';
+import { DataListProps } from '.';
 
 
 export const Container = styled.View`
@@ -82,24 +84,33 @@ export const TitleMain = styled.Text`
     margin-top: 16px;
 `;
 
+export const Wallet = styled.View`
+
+`
+
 export const HighlightCards = styled.ScrollView.attrs({
     horizontal: true,
     showsHorizontalScrollIndicator: false,
     contentContainerStyle: { paddingLeft: 23 }
-})`
-    height: ${RFValue(95)}px;
+})``;
+
+export const TransactionList = styled(
+    FlatList as new (props: FlatListProps<DataListProps>) =>
+        FlatList<DataListProps>).attrs({
+            showsVerticalScrollIndicator: false
+        })`
+
 `;
 
 export const ListTransactions = styled.View`
-    /* position: absolute; */
-
-    /* margin-top: ${getStatusBarHeight() + RFValue(280)}px; */
-    /* padding:  */
-`
+    margin-top: ${RFValue(35)}px;
+    border-top-width: 3px;
+    border-top-color: ${({ theme }) => theme.colors.cardView};
+`;
 
 export const Transactions = styled.View`
     padding: 0 27px;
-    margin-top: ${RFValue(5)}px;
+    margin-top: ${RFValue(10)}px;
 `;
 
 export const TitleTransactions = styled.Text`
