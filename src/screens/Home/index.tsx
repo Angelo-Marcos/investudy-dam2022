@@ -144,7 +144,8 @@ export function Home() {
                         data={transactionData}
                         keyExtractor={(item) => item.id}
                         renderItem={({ item }) =>
-                            <TransactionCard data={item} />}
+                            <TransactionCard data={item} />
+                        }
 
                     />
 

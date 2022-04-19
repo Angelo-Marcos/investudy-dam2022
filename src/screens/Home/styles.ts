@@ -18,7 +18,6 @@ export const Header = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* padding-top: 40px; */
 `;
 
 export const ContentWrapper = styled.View`
@@ -94,21 +93,22 @@ export const HighlightCards = styled.ScrollView.attrs({
     contentContainerStyle: { paddingLeft: 23 }
 })``;
 
-export const TransactionList = styled(
-    FlatList as new (props: FlatListProps<DataListProps>) =>
-        FlatList<DataListProps>).attrs({
-            showsVerticalScrollIndicator: false
-        })`
-
-`;
-
 export const ListTransactions = styled.View`
+    flex: 1;
     margin-top: ${RFValue(35)}px;
     border-top-width: 3px;
     border-top-color: ${({ theme }) => theme.colors.cardView};
 `;
 
+export const TransactionList = styled(
+    FlatList as new (props: FlatListProps<DataListProps>) => FlatList<DataListProps>).attrs({
+        showsVerticalScrollIndicator: false
+    })`
+
+`;
+
 export const Transactions = styled.View`
+    flex: 1;
     padding: 0 27px;
     margin-top: ${RFValue(10)}px;
 `;
