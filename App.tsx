@@ -10,6 +10,7 @@ import {
   useFonts,
   PaytoneOne_400Regular
 } from '@expo-google-fonts/paytone-one'
+import { Register } from './src/screens/Register';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,7 +23,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar style="light" />
-      <Home />
+      <Register />
     </ThemeProvider>
   );
 }

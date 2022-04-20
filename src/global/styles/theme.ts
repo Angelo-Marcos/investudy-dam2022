@@ -11,6 +11,8 @@ export default {
 
         income: '#3F51B5',
         expense: '#CA0606',
+
+        colorButton: '#67AF66',
     },
     fonts: {
         regular: 'PaytoneOne_400Regular'
