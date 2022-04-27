@@ -3,14 +3,14 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/global/styles/theme';
 import AppLoading from 'expo-app-loading';
-
-import { Home } from './src/screens/Home';
+import { NavigationContainer } from '@react-navigation/native';
 
 import {
   useFonts,
   PaytoneOne_400Regular
 } from '@expo-google-fonts/paytone-one'
-import { Register } from './src/screens/Register';
+
+import { AppRoutes } from './src/routes/app.routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -23,7 +23,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar style="light" />
-      <Register />
+      <NavigationContainer>
+        <AppRoutes />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
